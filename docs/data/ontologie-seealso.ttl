@@ -1,0 +1,3 @@
+# Klasse Gebouw gerelateerd aan begrip Gebouw
+ex-ont:Gebouw rdf:type rdfs:Class ;
+    rdfs:seeAlso ex-term:Gebouw .

@@ -1,0 +1,7 @@
+# N.B. We gebruiken in onze voorbeelden menselijk leesbare namen i.p.v. UUIDs t.b.v. de leesbaarheid.
+# Het woordenboek zelf
+ex-term:ModelGebouw rdf:type skos:ConceptScheme ;
+    dct:title "Praktijkvoorbeeld 'Gebouw'"@nl ;
+    dct:title "Practical example 'Building'"@en ;
+    skos:prefLabel "Praktijkvoorbeeld 'Gebouw'"@nl ;
+    skos:prefLabel "Practical example 'Building'"@en .

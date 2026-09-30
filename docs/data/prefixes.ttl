@@ -1,0 +1,18 @@
+# Prefixes zoals gebruikt in alle codevoorbeelden in dit document.
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix sh:      <http://www.w3.org/ns/shacl#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix nen2660: <https://w3id.org/nen2660/def#> .
+@prefix qudt:    <http://qudt.org/vocab/unit/> .
+@prefix schema:  <https://schema.org/> .
+# Prefixes zoals gebruikt in de voorbeelden in dit document (ex-** = example).
+@prefix ex-term: <http://data.organization.com/term/> .
+@prefix ex-ont:  <http://data.organization.com/def/> .
+@prefix ex-data: <http://data.organization.com/id/> .
+# Voorbeeld van een extern woordenboek, gebruikt bij match-relaties:
+@prefix imbor-term: <https://data.crow.nl/imbor/term/> .

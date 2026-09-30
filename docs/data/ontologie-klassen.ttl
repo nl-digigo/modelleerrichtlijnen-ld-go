@@ -1,0 +1,10 @@
+# Klasse met tweetalige naam, tweetalige definitie en een Nederlandse toelichting
+ex-ont:Gebouw rdf:type rdfs:Class ;
+    skos:prefLabel "Gebouw"@nl,
+                   "Building"@en ;
+    skos:definition "Bouwwerk dat begrensd, betreedbaar en afsluitbaar is."@nl,
+                    "A structure that is enclosed, accessible and lockable."@en ;
+    rdfs:comment "Toelichting op een gebouw."@nl .
+
+# Instantiëring - een individueel gebouw
+ex-data:Gebouw_123 rdf:type ex-ont:Gebouw .

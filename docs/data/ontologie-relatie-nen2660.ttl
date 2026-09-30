@@ -1,0 +1,17 @@
+# Klasse Gebouw
+ex-ont:Gebouw rdf:type rdfs:Class ;
+    skos:prefLabel "Gebouw"@nl ;
+    rdfs:subClassOf nen2660:PhysicalObject .
+
+# Klasse VentilatieSysteemEenheid
+ex-ont:VentilatieSysteemEenheid rdf:type rdfs:Class ;
+    skos:prefLabel "Ventilatie systeemeenheid"@nl ;
+    rdfs:subClassOf nen2660:DiscreteObject .
+
+# Instantiëring
+ex-data:Gebouw_123 rdf:type ex-ont:Gebouw .
+ex-data:VentilatieSysteem_123 rdf:type ex-ont:VentilatieSysteemEenheid .
+
+# Een Gebouw kan 0 of meer VentilatieSysteemEenheden hebben;
+# hier zitten geen beperkingen op.
+ex-data:Gebouw_123 nen2660:hasPart ex-data:VentilatieSysteem_123 .

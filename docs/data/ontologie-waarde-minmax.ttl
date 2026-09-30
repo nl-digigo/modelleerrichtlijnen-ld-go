@@ -1,0 +1,9 @@
+# Voorbeeld uit de vorige paragraaf, uitgebreid met een minimum (5000)
+# en maximum (10000000) voor de waarde.
+ex-ont:GebouwMassaValue rdf:type sh:PropertyShape ;
+    sh:path rdf:value ;
+    sh:datatype xsd:integer ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:maxInclusive 10000000 ;
+    sh:minInclusive 5000 .

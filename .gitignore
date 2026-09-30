@@ -1,0 +1,15 @@
+# Bronnen en tooling voor de omzetting van Word naar ReSpec blijven lokaal.
+# In de repo staat alleen het eindproduct: de ReSpec-publicatie (docs/),
+# plus de projectdocumentatie (README.md, AGENTS.md, AUTHORS, licentie).
+
+# Concept-Word-documenten
+*.docx
+*.doc
+
+# Conversie- en controletooling (lokaal, zie AGENTS.md)
+tools/
+
+# Agentic tooling / AI-instructies (lokaal)
+AGENTS.md
+.kilo/
+.claude/

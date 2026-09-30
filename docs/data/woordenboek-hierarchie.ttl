@@ -1,0 +1,4 @@
+# Hiërarchische en niet-hiërarchische relaties tussen begrippen
+ex-term:Gebouw rdf:type skos:Concept ;
+    skos:broader ex-term:Bouwwerk ;
+    skos:related ex-term:InpandigeRuimteGebouw .

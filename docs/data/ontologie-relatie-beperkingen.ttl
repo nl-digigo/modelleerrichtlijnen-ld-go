@@ -1,0 +1,35 @@
+# Klasse Gebouw
+ex-ont:Gebouw rdf:type rdfs:Class ;
+    skos:prefLabel "Gebouw"@nl ;
+    rdfs:subClassOf nen2660:PhysicalObject .
+
+# Klasse InpandigeRuimteGebouw
+ex-ont:InpandigeRuimteGebouw rdf:type rdfs:Class ;
+    skos:prefLabel "Inpandige ruimte gebouw"@nl ;
+    rdfs:subClassOf nen2660:SpatialRegion .
+
+# Regels omtrent het gebruik van relaties (met expliciete blank node)
+ex-ont:GebouwShape rdf:type sh:NodeShape ;
+    sh:targetClass ex-ont:Gebouw ;
+    sh:property _:propertyInpandigeRuimteGebouw .
+
+# Beperkingen en annotaties op de relatie 'nen2660:hasPart':
+# minimaal 1 inpandige ruimte als deel.
+_:propertyInpandigeRuimteGebouw rdf:type sh:PropertyShape ;
+    sh:path nen2660:hasPart ;
+    sh:qualifiedValueShape _:valueShapeRuimte ;
+    sh:qualifiedMinCount 1 ;
+    sh:name "heeft inpandige ruimte"@nl ;
+    sh:description "Een Gebouw moet minimaal één InpandigeRuimteGebouw als deel hebben (via hasPart)."@nl .
+
+_:valueShapeRuimte rdf:type sh:NodeShape ;
+    sh:class ex-ont:InpandigeRuimteGebouw .
+
+# Instantiëring - minimaal 1 inpandige ruimte
+ex-data:Gebouw_123 rdf:type ex-ont:Gebouw ;
+    nen2660:hasPart ex-data:InpandigeRuimteGebouw_123 .
+
+ex-data:InpandigeRuimteGebouw_123 rdf:type ex-ont:InpandigeRuimteGebouw .
+
+# Gebouw_456 is niet valide omdat het geen InpandigeRuimteGebouw heeft
+ex-data:Gebouw_456 rdf:type ex-ont:Gebouw .

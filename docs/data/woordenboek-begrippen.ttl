@@ -1,0 +1,5 @@
+# Begrip Gebouw
+ex-term:Gebouw rdf:type skos:Concept ;
+    skos:prefLabel "Gebouw"@nl ;
+    skos:prefLabel "Building"@en ;
+    skos:inScheme ex-term:ModelGebouw .

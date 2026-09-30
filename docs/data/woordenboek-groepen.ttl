@@ -1,0 +1,7 @@
+# Groep van begrippen
+ex-term:FunctioneleRuimten rdf:type skos:Collection ;
+    skos:prefLabel "Functionele ruimten"@nl,
+                   "Functional spaces"@en ;
+    skos:definition "Begrippen die te maken hebben met functionele ruimten"@nl,
+                    "Concepts related to functional spaces"@en ;
+    skos:member ex-term:Gebouw, ex-term:InpandigeRuimteGebouw .

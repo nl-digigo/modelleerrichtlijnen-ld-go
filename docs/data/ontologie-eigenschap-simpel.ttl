@@ -1,0 +1,38 @@
+# Eigenschap met naam en omschrijving
+ex-ont:aanlegjaar rdf:type rdf:Property ;
+    skos:prefLabel "Aanlegjaar"@nl,
+                   "Year of construction"@en ;
+    skos:definition "Kenmerk dat het jaar van aanleg aangeeft."@nl,
+                    "Property that indicates the year of construction."@en ;
+    rdfs:comment "Vast te leggen als jaartal."@nl,
+                 "To be recorded as the year."@en .
+
+# Eigenschap met als waardetype een geheel getal.
+# Deze SHACL shape geeft aan dat per Gebouw maximaal één aanlegjaar
+# vastgelegd kan worden, met datatype xsd:gYear.
+ex-ont:GebouwAanlegjaar rdf:type sh:PropertyShape ;
+    sh:path ex-ont:aanlegjaar ;
+    sh:datatype xsd:gYear ;
+    sh:maxCount 1 .
+
+# Koppeling van de klasse aan de SHACL shape
+ex-ont:Gebouw rdf:type rdfs:Class .
+
+ex-ont:GebouwShape rdf:type sh:NodeShape ;
+    sh:targetClass ex-ont:Gebouw ;
+    sh:property ex-ont:GebouwAanlegjaar .
+
+# Instantiëring - een individueel gebouw met aanlegjaar
+ex-data:Gebouw_123 rdf:type ex-ont:Gebouw ;
+    ex-ont:aanlegjaar "2010"^^xsd:gYear .
+
+# Deze instantie zal bij validatie een foutmelding geven:
+# de waarde "2010" is geen xsd:gYear.
+ex-data:Gebouw_456 rdf:type ex-ont:Gebouw ;
+    ex-ont:aanlegjaar "2010" .
+
+# Deze instantie zal bij validatie een foutmelding geven:
+# eigenschap ex-ont:aanlegjaar mag maar één keer voorkomen.
+ex-data:Gebouw_789 rdf:type ex-ont:Gebouw ;
+    ex-ont:aanlegjaar "2010"^^xsd:gYear ;
+    ex-ont:aanlegjaar "2011"^^xsd:gYear .

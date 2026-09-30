@@ -1,0 +1,20 @@
+# Eigenschap met naam en omschrijving
+ex-ont:id rdf:type rdf:Property ;
+    skos:prefLabel "Identificatie"@nl,
+                   "Identifier"@en ;
+    skos:definition "Unieke identificatie van een object."@nl .
+
+# Beperking: precies één string van twee cijfers, een streepje en twee cijfers
+ex-ont:GebouwIdShape rdf:type sh:PropertyShape ;
+    sh:path ex-ont:id ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:pattern "^[0-9]{2}-[0-9]{2}$" .
+
+# Koppeling van de klasse aan de SHACL shape
+ex-ont:Gebouw rdf:type rdfs:Class .
+
+ex-ont:GebouwShape rdf:type sh:NodeShape ;
+    sh:targetClass ex-ont:Gebouw ;
+    sh:property ex-ont:GebouwIdShape .

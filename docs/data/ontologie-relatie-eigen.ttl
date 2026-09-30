@@ -1,0 +1,38 @@
+# Klasse Gebouw
+ex-ont:Gebouw rdf:type rdfs:Class ;
+    skos:prefLabel "Gebouw"@nl ;
+    rdfs:subClassOf nen2660:PhysicalObject .
+
+# Klasse DraagConstructie
+ex-ont:DraagConstructie rdf:type rdfs:Class ;
+    skos:prefLabel "Draagconstructie"@nl ;
+    rdfs:subClassOf nen2660:DiscreteObject .
+
+# Definitie van de eigen relatie
+ex-ont:hasComponent rdf:type rdf:Property ;
+    skos:prefLabel "heeft component"@nl ;
+    skos:definition "Een specifiekere subproperty van hasPart ten behoeve van technische componenten."@nl ;
+    rdfs:subPropertyOf nen2660:hasPart .
+
+# Regels omtrent het gebruik van relaties (met expliciete blank node)
+ex-ont:GebouwShape rdf:type sh:NodeShape ;
+    sh:targetClass ex-ont:Gebouw ;
+    sh:property _:propertyDraagConstructie .
+
+# Minimaal 1 en maximaal 1 DraagConstructie via de specifiekere 'ex-ont:hasComponent'
+_:propertyDraagConstructie rdf:type sh:PropertyShape ;
+    sh:path ex-ont:hasComponent ;
+    sh:qualifiedValueShape _:valueShapeDraagConstructie ;
+    sh:qualifiedMinCount 1 ;
+    sh:qualifiedMaxCount 1 ;
+    sh:name "heeft component draagconstructie"@nl ;
+    sh:description "Een gebouw moet precies één draagconstructie als component hebben (via hasComponent)."@nl .
+
+_:valueShapeDraagConstructie rdf:type sh:NodeShape ;
+    sh:class ex-ont:DraagConstructie .
+
+# Instantiëring - minimaal 1 en maximaal 1 DraagConstructie via ex-ont:hasComponent
+ex-data:Gebouw_123 rdf:type ex-ont:Gebouw ;
+    ex-ont:hasComponent ex-data:DraagConstructie_123 .
+
+ex-data:DraagConstructie_123 rdf:type ex-ont:DraagConstructie .

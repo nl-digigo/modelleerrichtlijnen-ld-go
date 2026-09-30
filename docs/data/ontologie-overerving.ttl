@@ -1,0 +1,7 @@
+# Bouwwerk erft over van nen2660:PhysicalObject
+ex-ont:Bouwwerk rdf:type rdfs:Class ;
+    rdfs:subClassOf nen2660:PhysicalObject .
+
+# Gebouw erft over van Bouwwerk en daarmee ook van nen2660:PhysicalObject
+ex-ont:Gebouw rdf:type rdfs:Class ;
+    rdfs:subClassOf ex-ont:Bouwwerk .

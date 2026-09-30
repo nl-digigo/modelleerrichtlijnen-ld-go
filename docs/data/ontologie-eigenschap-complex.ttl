@@ -1,0 +1,40 @@
+# Eigenschap met naam en omschrijving (maar geen eenheid)
+ex-ont:massa rdf:type rdf:Property ;
+    skos:prefLabel "Massa"@nl,
+                   "Mass"@en ;
+    skos:definition "Kenmerk dat aangeeft uit hoeveel materie iets bestaat."@nl,
+                    "Property that indicates how much matter something consists of."@en .
+
+# De massa van een gebouw, mét een eenheid
+ex-ont:GebouwMassa rdf:type sh:PropertyShape ;
+    sh:path ex-ont:massa ;
+    sh:class nen2660:QuantityValue ;
+    sh:maxCount 1 ;
+    sh:node ex-ont:GebouwMassaNode .
+
+# De massa van een gebouw kent een waarde en een eenheid
+ex-ont:GebouwMassaNode rdf:type sh:NodeShape ;
+    sh:property ex-ont:GebouwMassaValue ;
+    sh:property ex-ont:GebouwMassaUnit .
+
+# Er moet één waarde zijn, met datatype decimal
+ex-ont:GebouwMassaValue rdf:type sh:PropertyShape ;
+    sh:path rdf:value ;
+    sh:datatype xsd:decimal ;
+    sh:maxCount 1 ;
+    sh:minCount 1 .
+
+# Er moet één eenheid worden vastgelegd (gram), conform de QUDT-standaard
+ex-ont:GebouwMassaUnit rdf:type sh:PropertyShape ;
+    sh:path nen2660:hasUnit ;
+    sh:hasValue qudt:GM ;
+    sh:maxCount 1 ;
+    sh:minCount 1 .
+
+# Instantiëring - een individueel gebouw met massa, met gescheiden waarde en eenheid
+ex-data:Gebouw_123 rdf:type ex-ont:Gebouw ;
+    ex-ont:massa ex-data:Gebouw_123Massa .
+
+ex-data:Gebouw_123Massa rdf:type nen2660:QuantityValue ;
+    rdf:value 120000.1 ;
+    nen2660:hasUnit qudt:GM .

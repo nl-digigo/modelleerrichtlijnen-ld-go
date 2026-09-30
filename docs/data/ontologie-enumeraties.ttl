@@ -1,0 +1,15 @@
+# Enumeratie voor kleuren
+ex-ont:KleurType rdf:type nen2660:EnumerationType ;
+    skos:prefLabel "Kleuren"@nl,
+                   "Colours"@en ;
+    skos:definition "Kleuren toegestaan binnen de huisstijl."@nl,
+                    "Colours permitted within the brand guidelines."@en .
+
+# Twee enumeratiewaarden met een naam per taal
+ex-data:Geel rdf:type ex-ont:KleurType ;
+    skos:prefLabel "Geel"@nl,
+                   "Yellow"@en .
+
+ex-data:Blauw rdf:type ex-ont:KleurType ;
+    skos:prefLabel "Blauw"@nl,
+                   "Blue"@en .
