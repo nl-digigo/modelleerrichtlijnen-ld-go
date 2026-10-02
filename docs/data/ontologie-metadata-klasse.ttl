@@ -1,0 +1,8 @@
+# Uitbreiding van klasse 'Gebouw' met een extra metadataveld
+ex-ont:Gebouw ex-ont:definitieBron "BGT" .
+
+ex-ont:definitieBron rdf:type rdf:Property ;
+    skos:prefLabel "Definitie bron"@nl,
+                   "Definition source"@en ;
+    skos:definition "Bron van de gebruikte definitie."@nl,
+                     "Source of the used definition."@en .

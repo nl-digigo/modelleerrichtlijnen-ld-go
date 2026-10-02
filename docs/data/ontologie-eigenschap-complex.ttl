@@ -24,10 +24,10 @@ ex-ont:GebouwMassaValue rdf:type sh:PropertyShape ;
     sh:maxCount 1 ;
     sh:minCount 1 .
 
-# Er moet één eenheid worden vastgelegd (gram), conform de QUDT-standaard
+# Er moet één eenheid worden vastgelegd (kilogram), conform de QUDT-standaard
 ex-ont:GebouwMassaUnit rdf:type sh:PropertyShape ;
     sh:path nen2660:hasUnit ;
-    sh:hasValue qudt:GM ;
+    sh:hasValue qudt:KiloGM ;
     sh:maxCount 1 ;
     sh:minCount 1 .
 
@@ -37,4 +37,4 @@ ex-data:Gebouw_123 rdf:type ex-ont:Gebouw ;
 
 ex-data:Gebouw_123Massa rdf:type nen2660:QuantityValue ;
     rdf:value 120000.1 ;
-    nen2660:hasUnit qudt:GM .
+    nen2660:hasUnit qudt:KiloGM .

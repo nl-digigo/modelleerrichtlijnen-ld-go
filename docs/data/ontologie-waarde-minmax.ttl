@@ -2,7 +2,7 @@
 # en maximum (10000000) voor de waarde.
 ex-ont:GebouwMassaValue rdf:type sh:PropertyShape ;
     sh:path rdf:value ;
-    sh:datatype xsd:integer ;
+    sh:datatype xsd:decimal ;
     sh:maxCount 1 ;
     sh:minCount 1 ;
     sh:maxInclusive 10000000 ;

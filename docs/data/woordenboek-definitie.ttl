@@ -1,7 +1,12 @@
 # N.B. We gebruiken in onze voorbeelden menselijk leesbare namen i.p.v. UUIDs t.b.v. de leesbaarheid.
-# Het woordenboek zelf
+# Versie 1.0 van een woordenboek, gepubliceerd op 15 januari 2026. De titel van het
+# woordenboek is geannoteerd in zowel het Nederlands als het Engels en met zowel
+# skos:prefLabel als dct:title.
 ex-term:ModelGebouw rdf:type skos:ConceptScheme ;
     dct:title "Praktijkvoorbeeld 'Gebouw'"@nl ;
     dct:title "Practical example 'Building'"@en ;
     skos:prefLabel "Praktijkvoorbeeld 'Gebouw'"@nl ;
-    skos:prefLabel "Practical example 'Building'"@en .
+    skos:prefLabel "Practical example 'Building'"@en ;
+    owl:versionInfo "1.0" ;
+    dct:date "2026-01-15"^^xsd:date ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> .

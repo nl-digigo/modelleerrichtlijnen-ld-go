@@ -1,15 +1,15 @@
 var respecConfig = {
   // this template doesn't use all possible config parameters
   // see https://github.com/stichting-crow/respec/wiki for all options
-  specStatus: "WD",
+  specStatus: "DEF",
   imprint: "digigo",
   specType: "richtlijn",
   // subtitle: "Hier komt een subtitle",
-  shortName: "modelleerrichtlijn-ld-go/",
-  publishDate: "2026-09-29",
+  shortName: "modelleerrichtlijnen-ld-go/",
+  publishDate: "2026-10-02",
   // previousPublishDate: "2026-01-01",
   // previousMaturity: "DEF",
-  // prevVersion: "https://bimloket.github.io/modelleerrichtlijn-ld-go/v/vorige-versie/index.html",
+  // prevVersion: "https://nl-digigo.github.io/modelleerrichtlijnen-ld-go/v/vorige-versie/index.html",
   license: "cc-by",
   editors: [
     {
@@ -44,7 +44,7 @@ var respecConfig = {
       companyURL: "https://www.semmtech.com",
     },
   ],
-  github: "https://github.com/bimloket/modelleerrichtlijn-ld-go",
+  github: "https://github.com/nl-digigo/modelleerrichtlijnen-ld-go",
   lint: { "no-unused-dfns": false },
 
   // If you need to include a one-off reference that isn't in the SpecRef database or

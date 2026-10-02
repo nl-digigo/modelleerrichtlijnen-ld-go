@@ -1,7 +1,7 @@
 # Klasse Gebouw
 ex-ont:Gebouw rdf:type rdfs:Class ;
     skos:prefLabel "Gebouw"@nl ;
-    rdfs:subClassOf nen2660:PhysicalObject .
+    rdfs:subClassOf ex-ont:Bouwwerk .
 
 # Klasse VentilatieSysteemEenheid
 ex-ont:VentilatieSysteemEenheid rdf:type rdfs:Class ;

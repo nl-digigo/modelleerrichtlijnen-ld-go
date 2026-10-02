@@ -1,5 +1,5 @@
-# Begrip Gebouw
+# Begrip Gebouw met tweetalige naam en verwijzing naar het woordenboek waar het onderdeel van is
 ex-term:Gebouw rdf:type skos:Concept ;
-    skos:prefLabel "Gebouw"@nl ;
-    skos:prefLabel "Building"@en ;
+    skos:prefLabel "Gebouw"@nl,
+                   "Building"@en ;
     skos:inScheme ex-term:ModelGebouw .

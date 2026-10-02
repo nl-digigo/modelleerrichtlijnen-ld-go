@@ -1,3 +1,5 @@
-# Klasse Gebouw gerelateerd aan begrip Gebouw
+# Klasse Gebouw verwijst naar het begrip Gebouw (naam en definitie zijn eerder al
+# gedefinieerd in overeenstemming met de naam en definitie die in het woordenboek
+# worden gebruikt)
 ex-ont:Gebouw rdf:type rdfs:Class ;
     rdfs:seeAlso ex-term:Gebouw .

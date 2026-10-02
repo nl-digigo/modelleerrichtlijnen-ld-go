@@ -1,8 +1,9 @@
 # N.B. We gebruiken in onze voorbeelden menselijk leesbare namen i.p.v. UUIDs t.b.v. de leesbaarheid.
-# De ontologie zelf
+# Ontologie met versieaanduiding, versieverwijzing, naam en datum.
+# De ontologie importeert de nen2660-ontologie.
 <http://data.organization.com/def> rdf:type owl:Ontology ;
     owl:versionInfo "Versie 2.1" ;
     owl:versionIRI <http://data.organization.com/def/v2_1> ;
-    rdfs:label "Praktijkvoorbeeld wegverharding"@nl ;
+    rdfs:label "Praktijkvoorbeeld 'Gebouw'"@nl ;
     dct:date "2026-01-01"^^xsd:date ;
     owl:imports <https://w3id.org/nen2660/rdfs/def> .

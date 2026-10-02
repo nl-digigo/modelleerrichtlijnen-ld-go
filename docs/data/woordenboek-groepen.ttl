@@ -1,7 +1,8 @@
-# Groep van begrippen
+# Groep "Functionele ruimten" ("Functional Spaces" in het Engels). De groep heeft
+# een tweetalige definitie en heeft twee begrippen als leden.
 ex-term:FunctioneleRuimten rdf:type skos:Collection ;
     skos:prefLabel "Functionele ruimten"@nl,
                    "Functional spaces"@en ;
     skos:definition "Begrippen die te maken hebben met functionele ruimten"@nl,
-                    "Concepts related to functional spaces"@en ;
+                     "Concepts related to functional spaces"@en ;
     skos:member ex-term:Gebouw, ex-term:InpandigeRuimteGebouw .

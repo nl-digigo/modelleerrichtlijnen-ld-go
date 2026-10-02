@@ -1,0 +1,2 @@
+# Hergebruik van een imbor-term door deze op te nemen in woordenboek ex-term:ModelGebouw
+imbor-term:928508de-47e4-417b-b1c9-c8cffc847a9b skos:inScheme ex-term:ModelGebouw .

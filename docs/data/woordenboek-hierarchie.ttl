@@ -1,4 +1,5 @@
-# Hiërarchische en niet-hiërarchische relaties tussen begrippen
+# Term ex-term:Bouwwerk is een breder begrip dan ex-term:Gebouw en
+# ex-term:Gebouw is gerelateerd aan ex-term:InpandigeRuimteGebouw
 ex-term:Gebouw rdf:type skos:Concept ;
     skos:broader ex-term:Bouwwerk ;
     skos:related ex-term:InpandigeRuimteGebouw .

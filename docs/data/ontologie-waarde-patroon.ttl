@@ -5,7 +5,7 @@ ex-ont:id rdf:type rdf:Property ;
     skos:definition "Unieke identificatie van een object."@nl .
 
 # Beperking: precies één string van twee cijfers, een streepje en twee cijfers
-ex-ont:GebouwIdShape rdf:type sh:PropertyShape ;
+ex-ont:GebouwId rdf:type sh:PropertyShape ;
     sh:path ex-ont:id ;
     sh:datatype xsd:string ;
     sh:minCount 1 ;
@@ -17,4 +17,4 @@ ex-ont:Gebouw rdf:type rdfs:Class .
 
 ex-ont:GebouwShape rdf:type sh:NodeShape ;
     sh:targetClass ex-ont:Gebouw ;
-    sh:property ex-ont:GebouwIdShape .
+    sh:property ex-ont:GebouwId .

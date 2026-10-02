@@ -1,6 +1,6 @@
-# Begrip Gebouw met een synoniem, definitie en code
+# Begrip Gebouw met een synoniem, definitie (tweetalig) en code
 ex-term:Gebouw rdf:type skos:Concept ;
     skos:altLabel "Pand"@nl ;
     skos:definition "Bouwwerk dat begrensd, betreedbaar en afsluitbaar is."@nl,
-                    "A structure that is enclosed, accessible and lockable."@en ;
+                     "A structure that is enclosed, accessible and lockable."@en ;
     skos:notation "GB" .
