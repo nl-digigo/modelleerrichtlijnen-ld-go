@@ -1,12 +1,8 @@
-# Richtlijnen voor woordenboeken
+# Richtlijnen voor woordenboek
 
-In dit hoofdstuk beschrijven we de richtlijnen voor het implementeren van een woordenboek conform linked data-standaarden. Hiervoor gebruiken we Simple Knowledge Organization System ([[skos-reference|SKOS]]) als vocabulaire en volgen we zowel de [[NEN2660-2]] als de Nederlandse Standaard voor het beschrijven van begrippen ([[NL-SBB]]). Waar onze richtlijnen afwijken van of aanvullen op deze twee standaarden, geven we dit aan. Dit hoofdstuk is praktisch van opzet: het laat zien hoe je een woordenboek stap voor stap opbouwt in SKOS. Dit komt overeen met "Toepassingstype 1: afstemming van termen en definities" in de [[NEN2660-2]].
+In dit hoofdstuk beschrijven we de richtlijnen voor het implementeren van een [=woordenboek=] conform linked data-standaarden. Hiervoor gebruiken we Simple Knowledge Organization System ([[skos-reference|SKOS]]) als vocabulaire en volgen we zowel de [[NEN2660-2]] als de Nederlandse Standaard voor het beschrijven van begrippen ([[NL-SBB]]). Waar onze richtlijnen afwijken van of aanvullen op deze twee standaarden, geven we dit aan. Dit hoofdstuk is praktisch van opzet: het laat zien hoe je een woordenboek stap voor stap opbouwt in SKOS. Dit komt overeen met "Toepassingstype 1: afstemming van termen en definities" in de [[NEN2660-2]].
 
-In onze codevoorbeelden gebruiken we de prefixes die zijn gedefinieerd in [[#codevoorbeelden]].
-
-<aside class="note" title="Leesbare namen in plaats van UUIDs">
-In onze codevoorbeelden gebruiken we, ten behoeve van de leesbaarheid, menselijk leesbare namen in de referentie in plaats van UUIDs. In normaal gebruik MOETEN UUIDs worden gebruikt, zie [[#uri-strategie-en-naamgeving]].
-</aside>
+In onze codevoorbeelden gebruiken we de prefixes die zijn gedefinieerd in [[[#codevoorbeelden]]].
 
 ## Woordenboek
 
@@ -45,7 +41,7 @@ Na het vastleggen van een begrip MAG er extra metadata aan worden toegevoegd.
 
 * Een begrip MAG nul of meer synoniemen per taal hebben middels `skos:altLabel`.
 * Een begrip ZOU één definitie (`skos:definition`) per taal MOETEN hebben. Een begrip MOET NIET meer dan één definitie per taal hebben.
-* Tot slot MAG een begrip nul of meer codes (`skos:notation`) hebben. Een code is een tekenreeks ter aanduiding van een term. Conform de [[NL-SBB]] stellen we dat een code uniek MOET zijn voor een begrip. Een code is taalonafhankelijk en MOET zonder taalaanduiding worden opgegeven.
+* Tot slot MAG een begrip nul of meer codes (`skos:notation`) hebben. Een code is een tekenreeks ter aanduiding van een begrip. Conform de [[NL-SBB]] stellen we dat een code uniek MOET zijn voor een begrip. Een code is taalonafhankelijk en MOET zonder taalaanduiding worden opgegeven.
 
 <pre><code class="turtle" data-include="data/woordenboek-synoniemen.ttl" data-include-format="text"></code></pre>
 
@@ -81,7 +77,7 @@ Deze richtlijn is conform de [[NL-SBB]]. De [[NEN2660-2]] schrijft niet voor hoe
 
 <pre><code class="turtle" data-include="data/woordenboek-matches.ttl" data-include-format="text"></code></pre>
 
-Voor formele mappingen van ontologieën (niet geschikt voor woordenboeken) is het ook mogelijk om andere relaties te gebruiken; zie hiervoor de [CROW-whitepaper over ontologie alignment](https://docs.crow.nl/ontology-alignment/whitepaper/).
+Voor formele mappingen van [=ontologieën=] (niet geschikt voor woordenboeken) is het ook mogelijk om andere relaties te gebruiken; zie hiervoor de [CROW-whitepaper over ontologie alignment](https://docs.crow.nl/ontology-alignment/whitepaper/).
 
 ## Hergebruik van begrippen
 

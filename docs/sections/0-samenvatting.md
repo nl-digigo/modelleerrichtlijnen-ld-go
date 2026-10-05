@@ -2,10 +2,10 @@ Dit document beschrijft technische modelleerrichtlijnen voor het modelleren van 
 
 Het document bevat:
 
-* algemene richtlijnen voor het modelleren in linked data ([[#algemene-richtlijnen]]);
-* richtlijnen voor het implementeren van een woordenboek in [[skos-reference|SKOS]] ([[#richtlijnen-voor-woordenboeken]]);
-* richtlijnen voor het implementeren van een ontologie in [[rdf-schema|RDFS]] + [[shacl|SHACL]] en het instantiëren daarvan als gegevensverzameling ([[#richtlijnen-voor-ontologieën-en-gegevensverzamelingen]]);
-* richtlijnen voor versiebeheer ([[#richtlijnen-voor-versiebeheer]]).
+* algemene richtlijnen voor het modelleren in linked data ([[[#algemene-richtlijnen]]]);
+* richtlijnen voor het implementeren van een woordenboek in [[skos-reference|SKOS]] ([[[#richtlijnen-voor-woordenboek]]]);
+* richtlijnen voor het implementeren van een ontologie in [[rdf-schema|RDFS]] + [[shacl|SHACL]] en het instantiëren daarvan als gegevensverzameling ([[[#richtlijnen-voor-een-ontologie-en-gegevensverzameling]]]);
+* richtlijnen voor versiebeheer ([[[#richtlijnen-voor-versiebeheer]]]).
 
 De richtlijnen zijn (vooralsnog) niet normatief; semantische definities en normatieve betekenissen liggen bij de standaarden. De richtlijnen geven sturing aan de technische modellering en implementatie van deze standaarden.
 

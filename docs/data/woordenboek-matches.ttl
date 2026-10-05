@@ -1,6 +1,3 @@
 # Begrip Gebouw ligt dicht bij een begrip uit een ander woordenboek (IMBOR)
 ex-term:Gebouw rdf:type skos:Concept ;
     skos:closeMatch imbor-term:928508de-47e4-417b-b1c9-c8cffc847a9b .
-
-# In dit voorbeeld geldt:
-# @prefix imbor-term: <https://data.crow.nl/imbor/term/> .

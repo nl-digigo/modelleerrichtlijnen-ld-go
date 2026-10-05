@@ -19,7 +19,18 @@
   <section id="toc">
     <!-- This section is filled with content automatically by ReSpec. -->
   </section>
-  <section id="conformance"></section>
+  <section id="conformance" class="override">
+    <h2>Conformiteit</h2>
+    <p>De in dit document beschreven richtlijnen zijn <strong>niet normatief</strong> van aard. Het adopteren ervan is vrijwillig, maar niet vrijblijvend. De semantische en normatieve betekenis van de gebruikte constructies ligt bij de onderliggende standaarden, met name de [[NEN2660-2]] en de [[NL-SBB]]; dit document geeft sturing aan de technische modellering en implementatie daarvan.</p>
+    <p>Om per onderdeel aan te geven in hoeverre een richtlijn opgevolgd zou moeten worden om tot interoperabiliteit te komen, gebruiken we de trefwoorden MOET, MOET NIET, MOETEN, ZOU MOETEN, ZOU NIET MOETEN, ZOUDEN MOETEN, ZOUDEN NIET MOETEN, MAG, MOGEN, AANGERADEN en OPTIONEEL, geschreven in hoofdletters. Anders dan de gebruikelijke interpretatie [[rfc2119]] duiden deze trefwoorden hier géén formele normativiteit aan, maar de mate waarin het opvolgen van een richtlijn bijdraagt aan interoperabiliteit. Ze hebben de volgende betekenis:</p>
+    <ul>
+      <li>MOET / MOET NIET: de richtlijn is verplicht. Als een implementatie zich niet aan deze richtlijn houdt, dan is deze niet interoperabel;</li>
+      <li>impliciet: als een trefwoord ontbreekt en iets simpelweg gesteld wordt, dan MOET dit worden geïnterpreteerd alsof het trefwoord MOET is gebruikt. Dit om in sommige gevallen te omslachtige taal- en codeconstructies te voorkomen. Voorbeeld: "Elk begrip wordt geclassificeerd als een <code>skos:Concept</code>.";</li>
+      <li>ZOU MOETEN of AANGERADEN: er kunnen redenen zijn om af te wijken van de richtlijn. De keuze om af te wijken MOET doordacht worden gemaakt, met oog voor de gevolgen van de keuze. Als een implementatie zich niet aan deze richtlijn houdt, dan is interoperabiliteit nog steeds mogelijk maar met een beperking in functionaliteit;</li>
+      <li>MAG of OPTIONEEL: de richtlijn is volledig optioneel. De ene implementatie zal deze richtlijn wel volgen, de andere niet. De keuze om af te wijken heeft weinig tot geen invloed op de interoperabiliteit.</li>
+    </ul>
+    <p>Als een trefwoord niet in hoofdletters is geschreven, dan MOET het niet als een trefwoord worden geïnterpreteerd.</p>
+  </section>
 
   <section data-include-format="markdown" data-include="sections/1-inleiding.md"></section>
   <section data-include-format="markdown" data-include="sections/2-algemene-richtlijnen.md"></section>

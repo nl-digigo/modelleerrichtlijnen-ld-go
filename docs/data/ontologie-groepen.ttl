@@ -1,5 +1,5 @@
 # Groep van klassen binnen een ontologie
-ex-ont:GebouwIndustrie rdf:type rdfs:Container ;
+ex-ont:GebouwIndustrie rdf:type rdfs:Bag ;
     skos:prefLabel "Gebouw industrie"@nl,
                    "Building industry"@en ;
     rdfs:member ex-ont:Gebouw, ex-ont:InpandigeRuimteGebouw .

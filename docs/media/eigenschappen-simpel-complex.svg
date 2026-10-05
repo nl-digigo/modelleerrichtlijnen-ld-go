@@ -97,11 +97,11 @@
 			<text x="36.73" y="138.7" class="st2" v:langID="1043"><v:paragraph v:horizAlign="1"/><v:tabList/>rdf:value</text>		</g>
 		<g id="shape38-41" v:mID="38" v:groupContext="shape" transform="translate(538.958,-0.375)">
 			<title>Sheet.38</title>
-			<desc>qudt:GM</desc>
+			<desc>qudt:KiloGM</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
 			<v:textRect cx="56.6929" cy="128.309" width="113.39" height="28.3465"/>
 			<rect x="0" y="114.136" width="113.386" height="28.3465" class="st1"/>
-			<text x="36.54" y="131.91" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>qudt:GM  </text>		</g>
+			<text x="36.54" y="131.91" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>qudt:KiloGM  </text>		</g>
 		<g id="shape39-44" v:mID="39" v:groupContext="shape" v:layerMember="0" transform="translate(425.572,-14.5482)">
 			<title>Dynamic connector.1019</title>
 			<desc>nen2660:hasUnit</desc>

@@ -1,20 +1,20 @@
-# Richtlijnen voor ontologieën en gegevensverzamelingen
+# Richtlijnen voor een ontologie en gegevensverzameling
 
-In dit hoofdstuk beschrijven we de richtlijnen voor het definiëren van een ontologie en bijbehorende gegevensverzameling (de instanties van de ontologie) conform linked data-standaarden. Dit hoofdstuk is praktisch van opzet: het laat zien hoe je een ontologie stap voor stap opbouwt en instantieert.
+In dit hoofdstuk beschrijven we de richtlijnen voor het definiëren van een [=ontologie=] en bijbehorende [=gegevensverzameling=] (de instanties van de ontologie) conform linked data-standaarden. Dit hoofdstuk is praktisch van opzet: het laat zien hoe je een ontologie stap voor stap opbouwt en instantieert.
 
-Een ontologie kan worden gebruikt voor verschillende soorten doelen. In dit hoofdstuk kiezen we voor een ontologie die het ons toelaat de structuur van instantiedata formeel voor te schrijven en te verifiëren. We gebruiken daarom [[rdf-schema|RDFS]] om de semantische structuur neer te zetten en [[shacl|SHACL]] voor het formaliseren en verifiëren van constraints op instantiedata. Dit komt overeen met toepassingstypes 2 (informatie-uitwisseling of -deling) en 3 (informatie-integratie en innovatie) in de [[NEN2660-2]]. De enige uitzondering waarvoor we [[owl2-overview|OWL]] gebruiken is om de ontologie als geheel te definiëren, zie het voorbeeld in [[#ontologie-definiëren]].
+Een ontologie kan worden gebruikt voor verschillende soorten doelen. In dit hoofdstuk kiezen we voor een ontologie die het ons toelaat de structuur van instantiedata formeel voor te schrijven en te verifiëren. We gebruiken daarom [[rdf-schema|RDFS]] om de semantische structuur neer te zetten en [[shacl|SHACL]] voor het formaliseren en verifiëren van constraints op instantiedata. Dit komt overeen met toepassingstypes 2 (informatie-uitwisseling of -deling) en 3 (informatie-integratie en innovatie) in de [[NEN2660-2]]. De enige uitzondering waarvoor we [[owl2-overview|OWL]] gebruiken is om de ontologie als geheel te definiëren, zie het voorbeeld in [[[#ontologie-definieren]]].
 
-In onze codevoorbeelden gebruiken we de prefixes die zijn gedefinieerd in [[#codevoorbeelden]]. Merk op dat we in onze codevoorbeelden, ten behoeve van de leesbaarheid, menselijk leesbare namen in de referentie gebruiken in plaats van UUIDs. In normaal gebruik MOETEN UUIDs worden gebruikt, zie [[#uri-strategie-en-naamgeving]].
+In onze codevoorbeelden gebruiken we de prefixes die zijn gedefinieerd in [[[#codevoorbeelden]]]. Merk op dat we in onze codevoorbeelden, ten behoeve van de leesbaarheid, menselijk leesbare namen in de referentie gebruiken in plaats van UUID's. In normaal gebruik MOETEN UUID's worden gebruikt, zie [[[#uri-strategie-en-naamgeving]]].
 
-## Ontologie definiëren
+## Ontologie definieren
 
-Een ontologie is een verzameling van klassen, attributen, relaties en beperkingen. Een ontologie wordt doorgaans in zijn geheel gepubliceerd. Metadatering van de ontologie is een vereiste voor versiebeheer, zie ook [[#richtlijnen-voor-versiebeheer]]. We starten daarom met het definiëren van de ontologie zelf.
+Een ontologie is een verzameling van klassen, attributen, relaties en beperkingen. Een ontologie wordt doorgaans in zijn geheel gepubliceerd. Metadatering van de ontologie is een vereiste voor versiebeheer, zie ook [[[#richtlijnen-voor-versiebeheer]]]. We starten daarom met het definiëren van de ontologie zelf.
 
 Een ontologie:
 
 * MOET worden geïnstantieerd als een `owl:Ontology`;
 * ZOU als URI hetzelfde MOETEN hebben als de namespace die wordt gebruikt, minus de `/` of `#` op het einde;
-* MOET de [[NEN2660-2]]-ontologie importeren middels `owl:imports`. Het topmodel importeren we omdat je ontologie niet compleet is zonder het topmodel. Dat onderscheidt het van referentiemodellen of delen van modellen die hergebruikt worden;
+* MOET de [[NEN2660-2]]-ontologie importeren middels `owl:imports`. Het toplevelmodel importeren we omdat je ontologie niet compleet is zonder het toplevelmodel. Dat onderscheidt het van referentiemodellen of delen van modellen die hergebruikt worden;
 * MOET een versieaanduiding hebben middels `owl:versionInfo`;
 * MOET een verwijzing naar een versie hebben middels `owl:versionIRI`;
 * MOET een naam hebben middels `rdfs:label`;
@@ -23,6 +23,10 @@ Een ontologie:
 * MAG andere metadata bevatten (bijvoorbeeld `dct:creator`, `dct:contributor`, `dct:publisher` of `schema:maintainer`).
 
 <pre><code class="turtle" data-include="data/ontologie-definitie.ttl" data-include-format="text"></code></pre>
+
+<aside class="advisement" title="URI van ontologie en namespace">
+Merk (nogmaals) op dat de URI van de ontologie zelf en de namespace die wordt gebruikt, hetzelfde zijn, minus de `/` of `#` op het einde. In de praktijk gaat dit vaak mis.
+</aside>
 
 ## Klassen definiëren en instantiëren
 
@@ -38,7 +42,7 @@ Instantiatie van een klasse MOET middels `rdf:type` worden gedaan.
 
 ## Resources relateren aan een begrip in het woordenboek
 
-We raden aan om, zoals beschreven in [[#achtergrond-woordenboeken-ontologieën-en-gegevensverzamelingen]] en conform de [[NEN2660-2]], eerst een woordenboek met begrippen op te stellen, en daarna bij het opstellen van de ontologie elke resource (klasse, eigenschap en relatie) te laten verwijzen naar het begrip dat het definieert. Hier geven we aan hoe die verwijzing te modelleren conform de [[NEN2660-2]]:
+We raden aan om, zoals beschreven in [[[#achtergrond-woordenboek-ontologie-en-gegevensverzameling]]] en conform de [[NEN2660-2]], eerst een [=woordenboek=] met begrippen op te stellen, en daarna bij het opstellen van de ontologie elke resource (klasse, eigenschap en relatie) te laten verwijzen naar het begrip dat het definieert. Hier geven we aan hoe die verwijzing te modelleren conform de [[NEN2660-2]]:
 
 * verwijzingen van een resource (klasse, eigenschap of relatie) naar een begrip MOETEN middels `rdfs:seeAlso` worden gemaakt. Deze semantisch zwakke relatie geeft aan dat de resource gebaseerd is op, maar niet precies hetzelfde is als dit begrip;
 * de resource ZOU dezelfde naam (`skos:prefLabel`) en definitie (`skos:definition`) MOETEN gebruiken als wordt gebruikt bij het begrip in het woordenboek. Dit heeft een dubbeling tot gevolg van naam en definitie in woordenboek en ontologie. De [[NEN2660-2]] schrijft dit voor om semantische softwaretooling te faciliteren.
@@ -51,13 +55,13 @@ Voor iedere klasse MAG, naast naam, omschrijving en toelichting, overige metadat
 
 <pre><code class="turtle" data-include="data/ontologie-metadata-klasse.ttl" data-include-format="text"></code></pre>
 
-## Overerven (van het NEN 2660-2-topmodel)
+## Overerven (van het NEN 2660-2-toplevelmodel)
 
 Met `rdfs:subClassOf` kan worden vastgelegd dat een klasse een specialisatie is van een andere klasse. Hierdoor kunnen instanties van de subklasse ook als instanties van de superklasse worden geïnterpreteerd. Daarmee erven ze alle eigenschappen en relaties van de bovenliggende klasse. Een klasse MAG van meerdere klassen overerven. Merk op dat het overerven van meerdere klassen extra complexiteit introduceert.
 
 Gebruik `rdfs:subClassOf` uitsluitend voor een semantisch betekenisvolle generalisatie-/specialisatierelatie, omdat deze relatie sterke inferenties met zich meebrengt.
 
-Elke klasse MOET direct of indirect overerven van het [[NEN2660-2]]-topmodel middels `rdfs:subClassOf`. Dit betekent dat de klasse zelf direct overerft van het topmodel, of dat het overerft van een klasse die (indirect) overerft van het topmodel.
+Elke klasse MOET direct of indirect overerven van het [[NEN2660-2]]-toplevelmodel middels `rdfs:subClassOf`. Dit betekent dat de klasse zelf direct overerft van het toplevelmodel, of dat deze overerft van een klasse die (indirect) overerft van het toplevelmodel.
 
 <pre><code class="turtle" data-include="data/ontologie-overerving.ttl" data-include-format="text"></code></pre>
 
@@ -89,8 +93,8 @@ De [[NEN2660-2]] biedt diverse opties voor het modelleren van eigenschappen, waa
 * **complex**: de waarde wordt vervangen door een tussenliggende node, waar metadata op vastgelegd kan worden zoals eenheid, bron, auteur, etc. In de praktijk wordt dit patroon vooral toegepast om eenheden aan te kunnen geven;
 * **waarnemingen** (out of scope en alleen in SML aanwezig): de waarden van een kenmerk worden gekoppeld aan een waarneming in plaats van een object. Die waarneming verwijst naar het object (feature of interest) en naar het waargenomen kenmerk, en legt vast wanneer, waarmee en volgens welke methode de waarde is bepaald, conform [[vocab-ssn|SOSA/SSN]]. Dit leidt tot een erg uitgebreid patroon, waardoor het complex wordt om deze in een ontologie voor te schrijven. Ook is dit patroon alleen relevant wanneer er series aan metingen (bijvoorbeeld van sensoren) worden vastgelegd op hetzelfde kenmerk van hetzelfde object, op verschillende tijdstippen. Dit modelleerpatroon valt daarom buiten de scope van deze modelleerrichtlijn.
 
-<figure>
-<img src="./media/eigenschappen-simpel-complex.svg" alt="Onderscheid tussen een simpele en complexe eigenschap">
+<figure id="fig-eigenschappen">
+<img src="./media/eigenschappen-simpel-complex.svg" alt="Vergelijking van een simpele en een complexe eigenschap. Simpel: Gebouw_123 heeft via aanlegjaar direct de waarde &quot;2010&quot;^^xsd:gYear. Complex: Gebouw_123 heeft via massa een tussenliggende node met rdf:value 120000.1 en nen2660:hasUnit qudt:KiloGM (de eenheid).">
 <figcaption>Onderscheid tussen een simpele en complexe eigenschap</figcaption>
 </figure>
 
@@ -134,7 +138,7 @@ Het onderstaande codevoorbeeld toont een eigenschap met een enumeratie als waard
 
 ### Complexe eigenschappen met eenheden
 
-Hier beschrijven we hoe een complexe eigenschap te definiëren en instantiëren. Een belangrijk verschil met simpele eigenschappen is dat met complexe eigenschappen eenheden en andere metadata in de gegevensverzameling kunnen worden vastgelegd op de waarde. Dit vereist dat zowel de waarde als de eenheid van een eigenschap allebei moeten worden vastgelegd. Hiervoor kent de [[NEN2660-2]] de klasse `nen2660:QuantityValue`. Voor instantiedata is de impact relatief klein, maar vooral op klasseniveau wordt het patroon een stuk complexer.
+Hier beschrijven we hoe een complexe eigenschap te definiëren en instantiëren. Een belangrijk verschil met simpele eigenschappen is dat met complexe eigenschappen eenheden en andere metadata in de gegevensverzameling kunnen worden vastgelegd op de waarde. Dit vereist dat zowel de waarde als de eenheid van een eigenschap moeten worden vastgelegd. Hiervoor kent de [[NEN2660-2]] de klasse `nen2660:QuantityValue`. Voor instantiedata is de impact relatief klein, maar vooral op klasseniveau wordt het patroon een stuk complexer.
 
 Het codevoorbeeld hieronder toont de structuur om een complexe eigenschap te definiëren en instantiëren. Merk op dat we voor de leesbaarheid hier geen gebruik maken van blank nodes, maar dat deze wel mogen worden toegepast.
 
@@ -147,7 +151,7 @@ Een complexe eigenschap wordt als volgt gedefinieerd:
 * `sh:minCount` en `sh:maxCount` kunnen worden toegepast op dezelfde manier als voor een simpele eigenschap;
 * een tussenliggende `sh:NodeShape` verwijst naar de beperkingen op de waarde en de eenheid middels `sh:property`;
 * de beperkingen op de waarde middels een `sh:PropertyShape`: deze MOET `sh:path rdf:value`, `sh:minCount 1` en `sh:maxCount 1` hebben en MAG een `sh:datatype` met een primair datatype hebben;
-* de beperkingen op de eenheid middels een `sh:PropertyShape`: deze MOET een `sh:path nen2660:hasUnit`, `sh:maxCount 1` en `sh:minCount 1` hebben, en ZOU een `sh:hasValue qudt:...` MOETEN hebben, behalve voor eenheden waarin QUDT niet voorziet.
+* de beperkingen op de eenheid middels een `sh:PropertyShape`: deze MOET een `sh:path nen2660:hasUnit`, `sh:maxCount 1` en `sh:minCount 1` hebben, en ZOU een `sh:hasValue qudt:...` MOETEN hebben, behalve voor eenheden waarin [=QUDT=] niet voorziet.
 
 Een complexe eigenschap wordt als volgt geïnstantieerd (in het voorbeeld is dit `ex-data:Gebouw_123Massa`):
 
@@ -164,17 +168,17 @@ Hetzelfde patroon, maar dan met `nen2660:QualityValue`, MAG gebruikt worden voor
 
 In de voorgaande paragrafen zijn de meest voorkomende beperkingen behandeld voor eigenschappen, zoals datatypes, waardenlijsten en eenheden. In deze paragraaf schrijven we twee manieren voor hoe beperkingen op de waarde van een eigenschap kunnen worden gemodelleerd.
 
-Voor numerieke datatypes MAG een minimum en/of een maximum worden voorgeschreven voor de waarde van een eigenschap. Hiervoor dienen `sh:minInclusive` (>=), `sh:maxInclusive` (<=), `sh:minExclusive` (>) en `sh:maxExclusive` (<) gebruikt te worden.
+Voor numerieke datatypes MAG een minimum en/of een maximum worden voorgeschreven voor de waarde van een eigenschap. Hiervoor MOETEN `sh:minInclusive` (>=), `sh:maxInclusive` (<=), `sh:minExclusive` (>) en `sh:maxExclusive` (<) gebruikt worden.
 
 <pre><code class="turtle" data-include="data/ontologie-waarde-minmax.ttl" data-include-format="text"></code></pre>
 
-Daarnaast MAG een patroon worden voorgeschreven (denk aan een Nederlands kenteken, met een specifieke combinatie van letters, cijfers en streepjes) voor de waarde van een eigenschap. Hiervoor wordt `sh:pattern` gebruikt. Het patroon dient uitgedrukt te worden als een reguliere expressie.
+Daarnaast MAG een patroon worden voorgeschreven (denk aan een Nederlands kenteken, met een specifieke combinatie van letters, cijfers en streepjes) voor de waarde van een eigenschap. Hiervoor wordt `sh:pattern` gebruikt. Het patroon MOET uitgedrukt worden als een reguliere expressie.
 
 <pre><code class="turtle" data-include="data/ontologie-waarde-patroon.ttl" data-include-format="text"></code></pre>
 
 ## Relaties
 
-Klassen kunnen onderling gerelateerd zijn. Als deze relaties in het informatiemodel zijn vastgelegd, bepalen ze hoe objecten (instanties) met elkaar verbonden mogen of moeten zijn in de data. De [[NEN2660-2]] biedt diverse gedefinieerde relaties met verschillende betekenissen. Voorbeelden zijn `nen2660:hasPart`, `nen2660:contains` en `nen2660:isConnectedTo`. De complete lijst is te vinden in paragraaf 6.14 van de [[NEN2660-2]] of op de [GitHub-repository w3id.org/nen2660](https://nen-nederlands-normalisatie-instituut.github.io/nen2660/-/query) van de NEN.
+Klassen kunnen onderling gerelateerd zijn. Als deze relaties in het informatiemodel zijn vastgelegd, bepalen ze hoe objecten (instanties) met elkaar verbonden mogen of moeten zijn in de data. De [[NEN2660-2]] biedt diverse gedefinieerde relaties met verschillende betekenissen. Voorbeelden zijn `nen2660:hasPart`, `nen2660:contains` en `nen2660:isConnectedTo`. De complete lijst is te vinden in paragraaf 6.14 van de [[NEN2660-2]] of via deze [query op de NEN2660-2](https://nen-nederlands-normalisatie-instituut.github.io/nen2660/-/query) van de NEN.
 
 Een relatie:
 
@@ -225,13 +229,13 @@ De richtlijnen voor het zelf definiëren van een relatie zijn als volgt:
 * de relatie MOET worden gedefinieerd als een `rdf:Property`;
 * de relatie ZOU een extensie van een [[NEN2660-2]]-relatie MOETEN zijn middels `rdfs:subPropertyOf`;
 * de `rdf:Property` MOET één naam per taal hebben middels `skos:prefLabel`;
-* de `rdf:Property` ZOU per taal precies één definitie MOETEN hebben (`skos:definition`). Een eigenschap MOET NIET meer dan één definitie per taal hebben;
+* de `rdf:Property` ZOU per taal precies één definitie MOETEN hebben (`skos:definition`). Een relatie MOET NIET meer dan één definitie per taal hebben;
 * de `rdf:Property` MAG een of meer toelichtingen per taal hebben (`rdfs:comment`);
-* beperkingen en annotaties MOETEN middels een `sh:PropertyShape` worden gedefinieerd; hiervoor gelden dezelfde richtlijnen als gedefinieerd in [[#gebruik-van-een-relatie-uit-de-nen-2660-2-met-aanvullende-beperkingen-en-annotaties]].
+* beperkingen en annotaties MOETEN middels een `sh:PropertyShape` worden gedefinieerd; hiervoor gelden dezelfde richtlijnen als gedefinieerd in [[[#gebruik-van-een-relatie-uit-de-nen-2660-2-met-aanvullende-beperkingen-en-annotaties]]].
 
 ## Groepen
 
-Klassen, enumeraties, eigenschappen en instanties kunnen worden gegroepeerd middels `rdfs:Container` en `rdfs:member`, bijvoorbeeld om te groeperen naar discipline. Een groep:
+Klassen, enumeraties, eigenschappen en instanties kunnen worden gegroepeerd middels `rdfs:Bag` en `rdfs:member`, bijvoorbeeld om te groeperen naar discipline. Een groep:
 
 * MOET per taal precies één voorkeursnaam hebben (`skos:prefLabel`);
 * ZOU per taal precies één definitie MOETEN hebben (`skos:definition`). Een groep MOET NIET meer dan één definitie per taal hebben;

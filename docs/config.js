@@ -26,7 +26,8 @@ var respecConfig = {
     },
     {
       name: "Lucas Verhelst",
-      company: "Freelance",
+      company: "lucasverhelst.nl",
+      companyURL: "https://lucasverhelst.nl/",
     },
     {
       name: "Rik",
@@ -45,7 +46,7 @@ var respecConfig = {
     },
   ],
   github: "https://github.com/nl-digigo/modelleerrichtlijnen-ld-go",
-  lint: { "no-unused-dfns": false },
+  lint: { "no-unused-dfns": true },
 
   // If you need to include a one-off reference that isn't in the SpecRef database or
   // if you need to override an existing reference with specific content, then you can use this configuration option.
