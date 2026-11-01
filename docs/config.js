@@ -53,13 +53,13 @@ var respecConfig = {
   localBiblio: {
     "NEN2660-2": {
       title: "NEN 2660-2:2022 - Regels voor informatiemodellering van de gebouwde omgeving - Deel 2: Praktische configuratie, extensie en implementatie",
-      href: "https://www.nen.nl/nen-2660-2-2022-nl-296667",
+      href: "https://www.nen.nl/nen-2660-2-2022-nl-291667",
       status: "Actueel",
       publisher: "NEN",
     },
     NPR4660: {
       title: "NPR 4660 - Semantische modellering van de gebouwde omgeving",
-      href: "https://www.nen.nl/en/npr-4660/",
+      href: "https://www.nen.nl/en/npr-4660-2026-nl-347385 ",
       status: "Actueel",
       publisher: "NEN",
     },
